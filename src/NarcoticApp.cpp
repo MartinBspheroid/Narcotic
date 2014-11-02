@@ -124,6 +124,11 @@ void Narcotic::drawImGui()
 	ImGui::Checkbox("Kinect Connected", &isKinectConnected);
 	ImGui::Checkbox("Arduino Connected", &isArduinoConnected);
 	ImGui::SliderInt("V1 val", &v1.posX, 0, 30);
+	ImGui::SliderFloat("input Volume", &audioIn.audioVolume, 0, 1);
+	ImGui::Separator();
+	ImGui::SliderInt("Randge1 start", &audioIn.range1.first, 0, audioIn.range1.second);
+	ImGui::SliderInt("Randge1 end", &audioIn.range1.second, audioIn.range1.first, 1024);
+	ImGui::SliderFloat("Range One Avg", &audioIn.range1Avg, 0, 100);
 
 	ImGui::Render();
 }
